@@ -30,6 +30,7 @@ export const inquirerInputAddExpense = async () => {
         return true;
       },
     },
+
     {
       type: "input",
       name: "amount",

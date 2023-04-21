@@ -10,13 +10,13 @@ import {
 import { loadDB, saveDB } from "./helpers/db.js";
 
 const main = async () => {
-  let opt = "";
+  let option = "";
   const expensesDB = loadDB();
   const expenses = new Expenses(expensesDB);
   do {
-    opt = await inquirerMenu();
+    option = await inquirerMenu();
 
-    switch (opt) {
+    switch (option) {
       case "1":
         expenses.getExpenseList();
         break;
@@ -41,8 +41,8 @@ const main = async () => {
 
     saveDB(JSON.stringify(expenses.expenseList));
 
-    if (opt !== "4") await inquirerPause();
-  } while (opt !== "4");
+    if (option !== "4") await inquirerPause();
+  } while (option !== "4");
 };
 
 main();
